@@ -1,0 +1,43 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+.ipynb_checkpoints/
+.pytest_cache/
+*.egg-info/
+.venv/
+venv/
+env/
+
+# --- AI / ML ---
+wandb/
+mlruns/
+tensorboard/
+logs/
+outputs/
+checkpoints/
+
+# --- OS / IDE ---
+.DS_Store
+Thumbs.db
+desktop.ini
+.idea/
+.vscode/
+*.swp
+
+# --- Local-only 디렉토리 ---
+docs/_archive/local-only/
+
+# --- 의료 영상 데이터 (LIDC-IDRI 직접 다운로드 가이드만 README 에서) ---
+*.dcm
+*.nii
+*.nii.gz
+features_verts/
+features_labels/
+*_features.npy
+*_vertex_labels.npy
+# 단 코드 동작 확인용 샘플 35 KB 는 예외
+!data_sample/*.npy
+
+# --- zip 일반 차단 ---
+*.zip
