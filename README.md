@@ -19,7 +19,7 @@
 다만 다음을 유의해야 직접 실행할 수 있습니다:
 - **학습 데이터는 포함되지 않습니다.** LIDC-IDRI (TCIA 공개 폐 CT-DICOM) 를 직접 다운로드해야 합니다 ([다운로드 가이드](#-데이터셋--학습--성능)).
 - **모델 가중치** (`models/dhkstjd.pth`, 52 MB) 는 Git LFS 로 push 되어 있습니다. clone 시 `git lfs pull` 필요.
-- **코드 안 경로**는 학습 당시 학교 공용 PC 의 절대 경로 (`C:/Users/<PC_A>/Desktop/spiral_torch/...`) 가 `<PC_A>` 로 마스킹되어 있어, 본인 환경에 맞게 수정해야 합니다.
+- **코드 안 경로**는 학습 당시 학교 공용 PC 의 절대 경로 (`C:/Users/<PC_A>/Desktop/spiral_torch/...`) 가 `<PC_A>` 로 마스킹되어 있어,  환경에 맞게 수정해야 합니다.
 - 실행: `streamlit run src/test2.py`
 
 ---
@@ -33,12 +33,12 @@
 | **과목** | 융합설계 및 프로젝트Ⅰ (종합설계), 3학년 1분반 |
 | **지도교수** | 송◯◯ 교수님 |
 | **팀** | **T.O.P** (Technology Of Prognosis, *"예측 기술"*) — 6 인 |
-| **팀 구성** | **PM 김태경 (본인, 학번 20615010)** / CM ◯◯◯ / QA1 ◯◯◯ / QA2 ◯◯◯ / ENG1 ◯◯◯ / ENG2 ◯◯◯ |
-| **본인 (KimTaeKyoung) 역할** | ★ **PM (프로젝트 총괄 · 일정 관리 · 진척도 관리 · 업무 분담) + 데이터 전처리 (DICOM → mesh → vertex)** |
-| **본인 1차 저자 산출물** | 5 종 — 팀프로젝트 편성서 · 프로젝트 제안서 · 초기 개발 기획서 · 개발 완료 보고서 · MS Project |
-| **AI 모델 / Streamlit UI** | ENG1 / ENG2 메인 (본인 미담당 — 아래 *본인 기여* 참조) |
+| **팀 구성** | **PM 김태경 (, 학번 20615010)** / CM ◯◯◯ / QA1 ◯◯◯ / QA2 ◯◯◯ / ENG1 ◯◯◯ / ENG2 ◯◯◯ |
+| ** (KimTaeKyoung) 역할** | ★ **PM (프로젝트 총괄 · 일정 관리 · 진척도 관리 · 업무 분담) + 데이터 전처리 (DICOM → mesh → vertex)** |
+| ** 1차 저자 산출물** | 5 종 — 팀프로젝트 편성서 · 프로젝트 제안서 · 초기 개발 기획서 · 개발 완료 보고서 · MS Project |
+| **AI 모델 / Streamlit UI** | ENG1 / ENG2 메인 ( 미담당 — 아래 * 기여* 참조) |
 
-> 📌 본 프로젝트는 본인 포트폴리오에서 **"AI" 부분이 처음 완성된 프로젝트**입니다. 이전 [`MedQueue`](https://github.com/MoriochoRadio/MedQueue) (환자 대기) · [`SchoolbusRFID`](https://github.com/MoriochoRadio/SchoolbusRFID) (어린이 안전) · [`ElderCaringApp`](https://github.com/MoriochoRadio/ElderCaringApp) (노인 케어) 가 *앱·IoT* 였다면, 본 프로젝트는 *첫 본격 딥러닝 의료 영상* 프로젝트이자 *첫 PM 경험* 입니다.
+> 📌 본 프로젝트는  포트폴리오에서 **"AI" 부분이 처음 완성된 프로젝트**입니다. 이전 [`MedQueue`](https://github.com/MoriochoRadio/MedQueue) (환자 대기) · [`SchoolbusRFID`](https://github.com/MoriochoRadio/SchoolbusRFID) (어린이 안전) · [`ElderCaringApp`](https://github.com/MoriochoRadio/ElderCaringApp) (노인 케어) 가 *앱·IoT* 였다면, 본 프로젝트는 *첫 본격 딥러닝 의료 영상* 프로젝트이자 *첫 PM 경험* 입니다.
 
 ---
 
@@ -109,7 +109,7 @@
 └────────────────────────────┬────────────────────────────────────┘
                              ▼
 ┌─────────────────────────────────────────────────────────────────┐
-│  ★ 데이터 전처리 (본인 영역, src/test2.py 12 함수 247 줄)            │
+│  ★ 데이터 전처리 ( 영역, src/test2.py 12 함수 247 줄)            │
 │  find_dicom_files → load_scan → get_pixels_hu (HU 변환)           │
 │  → resample (spacing 보정) → segment_lung_mask (marching cubes)   │
 │  → mesh 생성 → vertex 7-feature → .npy                            │
@@ -245,8 +245,6 @@ mesh_lung_mask_to_mesh (marching cubes → trimesh)
 preprocess_mesh_single (136줄 — MeshCNN 입력 전처리, 가장 큰 함수)
 ```
 
-> **정직하게 적어두자면**, 이 전처리 코드 작업에 참여한 것은 맞지만, **5 년 뒤의 본인이 이 레포를 다시 본다면 정확히 어느 함수의 어느 줄이 본인 손에서 나왔는지 기억하지 못할 것**입니다. 팀 작업이었고 git history 도 남아있지 않아 라인 단위 저자를 특정할 수 없습니다. 그래서 *"데이터 전처리 메인"* 이라고만 적고, 과장하지 않으려 합니다.
-
 ### 본인이 담당하지 않은 영역 (데이터로 확인된 정직 표기)
 
 **AI 모델 (4-branch 하이브리드) 의 설계·학습은 ENG1 / ENG2 가 메인**으로 담당했습니다. 이는 추측이 아니라 데이터로 확인됩니다 — 학습 노트북 [`notebooks/Untitled0.ipynb`](notebooks/Untitled0.ipynb) 의 5 개 셀 모두 Google Colab 의 `executionInfo.user` metadata 에 **작성·실행자가 ENG1 (◯◯◯) 으로 자동 기록**되어 있습니다 (해당 메타데이터는 마스킹 처리). Streamlit UI 본체 (`test2.py` 의 웹 페이지 부분) 도 조직도상 ENG 담당입니다.
@@ -363,9 +361,9 @@ if approx_edges < min_edges:
 
 ## ✍️ 회고
 
-이 프로젝트는 본인 포트폴리오의 *"의료 AI"* 라인이 처음 완성된 시점입니다. 이전 [MedQueue](https://github.com/MoriochoRadio/MedQueue), [SchoolbusRFID](https://github.com/MoriochoRadio/SchoolbusRFID), [ElderCaringApp](https://github.com/MoriochoRadio/ElderCaringApp) 까지는 의료·케어 도메인의 *"앱"* 부분이었다면, T.O.P 는 처음으로 본인이 PM 으로 6명 팀을 조율하며 *"AI"* 부분을 본격적으로 도입한 프로젝트입니다.
+이 프로젝트는 *"의료 AI"* 라인이 처음 완성된 시점입니다. 이전 [MedQueue](https://github.com/MoriochoRadio/MedQueue), [SchoolbusRFID](https://github.com/MoriochoRadio/SchoolbusRFID), [ElderCaringApp](https://github.com/MoriochoRadio/ElderCaringApp) 까지는 의료·케어 도메인의 *"앱"* 부분이었다면, T.O.P 는 처음으로 본인이 PM 으로 6명 팀을 조율하며 *"AI"* 부분을 본격적으로 도입한 프로젝트입니다.
 
-본인 영역은 PM 의 일정·진척도·업무 분담 관리, 그리고 데이터 전처리 (DICOM → mesh → vertex `.npy` 변환) 였습니다. 4-branch 하이브리드 모델 (SpiralNet + PointNet + Transformer + MeshCNN) 자체는 ENG1/ENG2 가 설계·학습했고, 그 사실은 학습 노트북의 Colab metadata 에 작성자로 자동 박제되어 있습니다. 본인은 산출물 21 종 중 5 종의 1차 저자였고, 166 페이지 산출물 중 143 페이지 (86%) 에 책임자 PM 으로 기록되어 있습니다. *"내가 AI 모델을 다 짰다"* 고 과장하는 대신, *"PM 으로 팀을 조율하고 데이터 전처리를 맡았다"* 고 정직하게 적는 것이 5 년 뒤의 본인에게도 떳떳한 기록이라고 생각합니다.
+본인 영역은 PM 의 일정·진척도·업무 분담 관리, 그리고 데이터 전처리 (DICOM → mesh → vertex `.npy` 변환) 였습니다. 4-branch 하이브리드 모델 (SpiralNet + PointNet + Transformer + MeshCNN) 자체는 ENG1/ENG2 가 설계·학습했고, 그 사실은 학습 노트북의 Colab metadata 에 작성자로 자동 박제되어 있습니다. 본인은 산출물 21 종 중 5 종의 1차 저자였고, 166 페이지 산출물 중 143 페이지 (86%) 에 책임자 PM 으로 기록되어 있습니다. 
 
 테스트셋 234건에서 정확도 73.1%, 음성 재현율 19.0% 의 격차는 학부 첫 AI 프로젝트의 데이터 불균형 문제를 그대로 드러냅니다. 발표에서 본인이 직접 *"데이터 불균형 개선 필요"* 라고 인정했고, 이 한계 인식이 다음 프로젝트로 이어졌습니다.
 
