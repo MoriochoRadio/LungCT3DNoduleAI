@@ -19,7 +19,7 @@
 다만 다음을 유의해야 직접 실행할 수 있습니다:
 - **학습 데이터는 포함되지 않습니다.** LIDC-IDRI (TCIA 공개 폐 CT-DICOM) 를 직접 다운로드해야 합니다 ([다운로드 가이드](#-데이터셋--학습--성능)).
 - **모델 가중치** (`models/dhkstjd.pth`, 52 MB) 는 Git LFS 로 push 되어 있습니다. clone 시 `git lfs pull` 필요.
-- **코드 안 경로**는 학습 당시 학교 공용 PC 의 절대 경로 (`C:/Users/<PC_A>/Desktop/spiral_torch/...`) 가 `<PC_A>` 로 마스킹되어 있어,  환경에 맞게 수정해야 합니다.
+- **코드 안 경로**는 학습 당시 학교 공용 PC 의 절대 경로 (`C:/Users/<PC_A>/Desktop/spiral_torch/...`) 가 `<PC_A>` 로 마스킹되어 있어, 본인 환경에 맞게 수정해야 합니다.
 - 실행: `streamlit run src/test2.py`
 
 ---
@@ -34,11 +34,11 @@
 | **지도교수** | 송◯◯ 교수님 |
 | **팀** | **T.O.P** (Technology Of Prognosis, *"예측 기술"*) — 6 인 |
 | **팀 구성** | **PM 김태경 (본인)** / CM ◯◯◯ / QA1 ◯◯◯ / QA2 ◯◯◯ / ENG1 ◯◯◯ / ENG2 ◯◯◯ |
-| ** (KimTaeKyoung) 역할** | ★ **PM (프로젝트 총괄 · 일정 관리 · 진척도 관리 · 업무 분담) + 데이터 전처리 (DICOM → mesh → vertex)** |
-| ** 1차 저자 산출물** | 5 종 — 팀프로젝트 편성서 · 프로젝트 제안서 · 초기 개발 기획서 · 개발 완료 보고서 · MS Project |
-| **AI 모델 / Streamlit UI** | ENG1 / ENG2 메인 ( 미담당 — 아래 * 기여* 참조) |
+| **본인 (KimTaeKyoung) 역할** | ★ **PM (프로젝트 총괄 · 일정 관리 · 진척도 관리 · 업무 분담) + 데이터 전처리 (DICOM → mesh → vertex)** |
+| **본인 1차 저자 산출물** | 5 종 — 팀프로젝트 편성서 · 프로젝트 제안서 · 초기 개발 기획서 · 개발 완료 보고서 · MS Project |
+| **AI 모델 / Streamlit UI** | ENG1 / ENG2 메인 (본인 미담당 — 아래 [*본인 기여*](#-본인-기여-kimtaekyoung--pm--데이터-전처리) 참조) |
 
-> 📌 본 프로젝트는  포트폴리오에서 **"AI" 부분이 처음 완성된 프로젝트**입니다. 이전 [`MedQueue`](https://github.com/MoriochoRadio/MedQueue) (환자 대기) · [`SchoolbusRFID`](https://github.com/MoriochoRadio/SchoolbusRFID) (어린이 안전) · [`ElderCaringApp`](https://github.com/MoriochoRadio/ElderCaringApp) (노인 케어) 가 *앱·IoT* 였다면, 본 프로젝트는 *첫 본격 딥러닝 의료 영상* 프로젝트이자 *첫 PM 경험* 입니다.
+> 📌 본 프로젝트는 본인 포트폴리오에서 **"AI" 부분이 처음 완성된 프로젝트**입니다. 이전 [`MedQueue`](https://github.com/MoriochoRadio/MedQueue) (환자 대기) · [`SchoolbusRFID`](https://github.com/MoriochoRadio/SchoolbusRFID) (어린이 안전) · [`ElderCaringApp`](https://github.com/MoriochoRadio/ElderCaringApp) (노인 케어) 가 *앱·IoT* 였다면, 본 프로젝트는 *첫 본격 딥러닝 의료 영상* 프로젝트이자 *첫 PM 경험* 입니다.
 
 ---
 
@@ -274,8 +274,6 @@ PM 으로서 팀 전체의 일정과 산출물을 책임지되, AI 모델 학습
 - **음성 재현율 19.0%** — 데이터 불균형 문제 (위 [성능](#-데이터셋--학습--성능) 참조)
 - **단일 케이스 중심 학습** — 다양한 케이스 확보 필요
 - 발표 slide 21 의 향후 개발 계획: *"낮은 '결절 없음' 예측 정확도 향상 / 더 많은 폐 CT 데이터 확보 / 폐 외에도 간·뇌 등 다양한 부위로 확장."*
-
----
 
 ---
 
